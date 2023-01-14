@@ -92,11 +92,15 @@ Task 5
 When a user clicks the 'Add some text' button, the text in the input field should be appended to the page as a new paragraph below it.
 Hint: the new paragraph should be appended to the element with id 'addArticle'.
 */
+const addTextElement = document.querySelector("#addArticleBtn");
+addTextElement.addEventListener("click", () => {
+  const paragraphElement = document.createElement("p");
 
-const addSomeText = document.querySelector(
-  ".btn.btn-primary.dd-article__button"
-);
-addSomeText.addEventListener("click", () => {
-  let newText = document.createElement("p");
-  let newText.innerText()
+  const textInput = document.querySelector("#addArticleInput");
+  const inputValue = textInput.value;
+
+  paragraphElement.innerText = inputValue;
+
+  const mainArticlesElement = document.querySelector("#addArticle");
+  mainArticlesElement.appendChild(paragraphElement);
 });
