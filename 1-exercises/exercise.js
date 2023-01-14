@@ -22,15 +22,29 @@ Write JavaScript below that console.logs:
     --> should log a list of nodes with a length of 3
 
 */
+let h1Elements = document.querySelectorAll("h1");
+console.log(h1Elements);
 
+let firstDiv = document.querySelector("div");
+console.log(firstDiv);
 
+let elementWithId = document.querySelector("#jumbotronText");
+console.log(elementWithId);
+
+let containedInside = document.querySelector(".primary-content p");
+console.log(containedInside);
 /*
 Task 2
 ======
 
 When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
 */
+const whenClicked = document.querySelector("#alertBtn");
 
+whenClicked.addEventListener("click", () => {
+  alert("Thanks for visiting Bikes for Refugees!");
+});
+// alert("Thanks for visiting Bikes for Refugees!");
 
 /*
 Task 3
@@ -39,7 +53,12 @@ Task 3
 When a user clicks the 'Change colour' button, the background colour of the page should change to red.
 Hint: can you do this with a CSS class instead of adding styles to the element?
 */
+const changeColor = document.querySelector(".btn.btn-primary.btn-lrg");
 
+changeColor.addEventListener("click", () => {
+  let mainBody = document.querySelector("body");
+  mainBody.style.backgroundColor = "red";
+});
 
 /*
 Task 4
@@ -47,8 +66,14 @@ Task 4
 
 When a user clicks the 'Larger links!' button, the text of all links on the page should increase.
 */
+const largerLinks = document.querySelector(".btn.btn-secondary.btn-lrg");
 
-
+largerLinks.addEventListener("click", () => {
+  let allLinks = document.querySelectorAll("a");
+  for (let i = 0; i < largerLinks.length; i++) {
+    allLinks[i].style.fontSize = "x-large";
+  }
+});
 /*
 Task 5
 ======
