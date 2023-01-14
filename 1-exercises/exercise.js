@@ -74,6 +74,17 @@ largerLinks.addEventListener("click", () => {
     allLinks[i].style.fontSize = "x-large";
   }
 });
+
+const largerLinksElement = document.querySelector("#largerLinksBtn");
+largerLinksElement.addEventListener("click", () => {
+  const aTagList = document.querySelectorAll("a");
+  aTagList.forEach((tag) => {
+    let val = Number(tag.style.fontSize.replace("em", ""));
+    val += 0.5;
+
+    tag.style.fontSize = `${val}em`;
+  });
+});
 /*
 Task 5
 ======
@@ -81,3 +92,11 @@ Task 5
 When a user clicks the 'Add some text' button, the text in the input field should be appended to the page as a new paragraph below it.
 Hint: the new paragraph should be appended to the element with id 'addArticle'.
 */
+
+const addSomeText = document.querySelector(
+  ".btn.btn-primary.dd-article__button"
+);
+addSomeText.addEventListener("click", () => {
+  let newText = document.createElement("p");
+  let newText.innerText()
+});
